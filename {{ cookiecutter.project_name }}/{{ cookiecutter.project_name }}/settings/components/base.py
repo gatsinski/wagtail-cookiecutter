@@ -31,9 +31,25 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Wagtail
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail.core",
+    "modelcluster",
+    "taggit",
     # Project apps
     "{{ cookiecutter.project_name }}",
     "{{ cookiecutter.project_name }}.contrib.users.apps.UsersConfig",
+    "{{ cookiecutter.project_name }}.contrib.home.apps.HomeConfig",
+
 ]
 
 ROOT_URLCONF = "{{ cookiecutter.project_name }}.urls"
@@ -44,6 +60,13 @@ WSGI_APPLICATION = "{{ cookiecutter.project_name }}.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "static"
+
+# Media files
+# https://docs.djangoproject.com/en/3.2/topics/files/
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
